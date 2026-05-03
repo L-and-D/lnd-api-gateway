@@ -1,0 +1,22 @@
+name: CI/CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  pipeline:
+    uses: L-and-D/LnD/.github/workflows/backend.yml@main
+
+    with:
+      service: "api-gateway"
+      image: ghcr.io/l-and-d/ld-api-gateway
+      trigger: ${{ github.event_name }}
+
+    secrets: inherit
