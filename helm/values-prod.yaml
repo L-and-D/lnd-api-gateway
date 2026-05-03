@@ -1,0 +1,13 @@
+image:
+  repository: l-and-d/ld-api-gateway
+  tag: v1.0.4
+replicas: 1
+port: 3000
+namespace: prod
+env:
+  REDIS_URL: redis://redis:6379
+  AUTH_SERVICE_URL: http://auth-service:3001
+  USER_SERVICE_URL: http://user-service:3002
+  TRAINING_SERVICE_URL: http://training-service:3003
+  ATTENDANCE_SERVICE_URL: http://attendance-service:3004
+  NOTIFICATION_SERVICE_URL: http://notification-service:3005

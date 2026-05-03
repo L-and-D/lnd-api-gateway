@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-config
+data:
+  PORT: "3000"
+  NODE_ENV: development
+  REDIS_URL: redis://redis:6379
+  AUTH_SERVICE_URL: http://auth-service:3001
+  USER_SERVICE_URL: http://user-service:3002
+  TRAINING_SERVICE_URL: http://training-service:3003
+  ATTENDANCE_SERVICE_URL: http://attendance-service:3004
+  NOTIFICATION_SERVICE_URL: http://notification-service:3005
